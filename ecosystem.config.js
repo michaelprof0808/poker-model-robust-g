@@ -7,10 +7,8 @@ module.exports = { apps: [{
     VIRTUAL_ENV: '/opt/poker-model-robust-a/.venv',
     PYTHONPATH: '/opt/poker-model-robust-a',
     WALLET_NAME: 'poker', HOTKEY: 'sn126_1', AXON_PORT: '8195',
-    POKER44_MODEL_FACTORY: 'poker44_champion_v31.model:create_champion_model',
-    POKER44_MODEL_VERSION: 'round7-primary-v31-1',
-    POKER44_MODEL_PATH: '/opt/poker-model-robust-a/artifacts/champion-orientation-guard.candidate.joblib',
-    POKER44_CHAMPION_ALLOW_UNPROMOTED: '1',
+    POKER44_MODEL_FACTORY: 'poker44_champion_v6.model:create_model',
+    POKER44_MODEL_VERSION: 'round7-primary-v6-robust-1',
     POKER44_MAX_SESSIONS_PER_REQUEST: '256', POKER44_MAX_REQUEST_BYTES: '16777216',
     POKER44_ENCRYPTED_AXON_ENABLED: 'true', POKER44_AXON_EXTERNAL_IP: '161.35.119.64',
     POKER44_AXON_EXTERNAL_PORT: '8195'

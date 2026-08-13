@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://poker44.net/contracts/validation-report.v3.schema.json",
+  "title": "Poker44 Validation Report v3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "event_id", "round_id", "sequence", "event_type", "netuid", "validator_hotkey", "created_at", "payload"],
+  "properties": {
+    "schema_version": { "const": "3" },
+    "event_id": { "type": "string", "minLength": 1, "maxLength": 128 },
+    "round_id": { "type": "string", "minLength": 1, "maxLength": 128 },
+    "sequence": { "type": "integer", "minimum": 0 },
+    "netuid": { "type": "integer", "minimum": 0 },
+    "event_type": {
+      "enum": ["validation_round_started", "sessions_acquired", "redteam_gate_checked", "miners_queried", "scores_computed", "weights_computed", "weights_submitted", "weights_refreshed", "commit_finalized", "weights_finalized", "weights_revealed", "validation_round_failed"]
+    },
+    "validator_hotkey": { "type": "string", "minLength": 1, "maxLength": 128 },
+    "validator_uid": { "type": ["integer", "null"], "minimum": 0 },
+    "validator_name": { "type": ["string", "null"], "minLength": 1, "maxLength": 128 },
+    "created_at": { "type": "string", "format": "date-time" },
+    "payload": { "type": "object" }
+  }
+}
